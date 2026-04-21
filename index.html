@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Titanic AI Predictor</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,75,43,0.7);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);} 
+    to {opacity: 1; transform: translateY(0);} 
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🚢 Titanic Survival Predictor</h2>
+    <form action="/predict" method="post">
+        <select name="pclass">
+            <option value="1">1st Class</option>
+            <option value="2">2nd Class</option>
+            <option value="3">3rd Class</option>
+        </select>
+
+        <select name="sex">
+            <option value="0">Male</option>
+            <option value="1">Female</option>
+        </select>
+
+        <input type="number" step="any" name="age" placeholder="Age" required>
+        <input type="number" name="sibsp" placeholder="Siblings/Spouse" required>
+        <input type="number" name="parch" placeholder="Parents/Children" required>
+        <input type="number" step="any" name="fare" placeholder="Fare" required>
+
+        <button type="submit">Predict 🚀</button>
+    </form>
+</div>
+
+</body>
+</html>
+
+
+

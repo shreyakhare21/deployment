@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prediction Result</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1d2b64, #f8cdda);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.card {
+    background: rgba(0,0,0,0.6);
+    padding: 50px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(0,0,0,0.6);
+    animation: zoomIn 1s ease;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.result {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px 0;
+    animation: pulse 1.5s infinite;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.5); opacity: 0;} 
+    to {transform: scale(1); opacity: 1;} 
+}
+
+@keyframes pulse {
+    0% {transform: scale(1);} 
+    50% {transform: scale(1.1);} 
+    100% {transform: scale(1);} 
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h2>🎯 Prediction Result</h2>
+    <div class="result">{{ result }}</div>
+    <a href="/"><button>Try Again 🔄</button></a>
+</div>
+
+</body>
+</html>
